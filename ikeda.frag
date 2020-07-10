@@ -1,3 +1,6 @@
+// Author @patriciogv - 2015
+// Title: Ikeda Data Stream
+
 #ifdef GL_ES
 precision mediump float;
 #endif

@@ -4,12 +4,12 @@
  export DISPLAY=:1.0
 # export DISPLAY=desktop:0
 # Wanted trigger timeout in milliseconds.
-IDLE_TIME=$((5*1000))
+IDLE_TIME=$((5*60*1000))
 
 # Sequence to execute when timeout triggers.
 trigger_cmd() {
-    gnome-screenshot -f tmp.png  
-    glslViewer /home/$USER/.glslScreenSaver/ikeda.frag tmp.png -f -e cursor,off
+    gnome-screenshot -f /tmp/glslScreenSaver.png  
+    glslViewer /home/$USER/.glslScreenSaver/ikeda.frag /tmp/glslScreenSaver.png -f -e cursor,off
 }
 
 sleep_time=$IDLE_TIME
