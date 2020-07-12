@@ -1,1 +1,1 @@
-shaders/grayscot.frag
+shaders/defrag.frag
