@@ -25,11 +25,11 @@ float pattern(vec2 st, vec2 v, float t) {
 void main() {
     vec3 color = vec3(0.);
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    color += texture2D(u_tex0, st).rgb;
+    color += texture2D(u_tex0, st).rgb * (1.0 - min(u_time * 0.1, 1.0));
 
     st.x *= u_resolution.x/u_resolution.y;
 
-    vec2 grid = vec2(100.0,50.) * 3.0;
+    vec2 grid = vec2(90.0, 60.0) * 2.0;
     st *= grid;
 
     vec2 ipos = floor(st);  // integer
@@ -41,8 +41,8 @@ void main() {
     // Assign a random value base on the integer coord
     vec2 offset = vec2(0.1,0.);
 
-    float amount = sin(u_time * 0.5 + random(ipos.y * 0.01) ) * 0.5 + 0.5;
-    float margin = cos(u_time * 0.1 + random(ipos.y * 0.5) ) * 0.5 + 0.5;
+    float amount = sin( (u_time * 0.25 + random(ipos.y *0.5)) * 3.1415 ) * 0.5 + 0.5;
+    float margin = cos( (u_time * 0.5 + random(ipos.y)) ) * 0.5 + 0.5;
 
     vec3 pat = vec3(0.0);
     pat.r = pattern(st+offset,vel,0.5+amount);
@@ -50,7 +50,7 @@ void main() {
     pat.b = pattern(st-offset,vel,0.5+amount);
 
     // Margins
-    color += pat * step(0.2 * margin,fpos.y);
+    color += pat * step(margin * .2, fpos.y);
 
     gl_FragColor = vec4(color,1.0);
 }

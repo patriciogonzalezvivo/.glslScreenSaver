@@ -1,1 +1,1 @@
-shaders/ikeda.frag
+shaders/grayscot.frag

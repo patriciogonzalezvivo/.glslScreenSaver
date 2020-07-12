@@ -26,11 +26,33 @@ Should look like this
 ![](imgs/00.png)
 
 
-## Edit
+## Change the shaders
 
-To edit you shader you can use any text editor together with glslViewer
+* See what options you have `./list.sh`
 
 ```bash
-glslViewer ~/.glslScreenSaver/ikeda.
-
+cd ~/.glslScreenSaver
+./list.sh
 ```
+
+* Choose a shader using `./choose.sh [name]`
+
+```bash
+cd ~/.glslScreenSaver
+./choose.sh ikeda
+```
+
+* Test it using `./run.sh`
+
+```bash
+cd ~/.glslScreenSaver
+./run.sh
+```
+
+## Make your own screensaver
+
+1. Duplicate any of the default shaders under `~/.glslScreenSaver/shaders/`
+2. Edit it with your favorite code editor
+3. try it out with glslViewer
+
+Note: If you are new to glsl shader you probably want to take a look to https://thebookofshaders.com/ to learn how to code them
