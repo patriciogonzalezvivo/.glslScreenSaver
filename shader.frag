@@ -1,1 +1,1 @@
-shaders/iching_grayscot.frag
+shader.frag

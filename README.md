@@ -28,18 +28,11 @@ Should look like this
 
 ## Change the shaders
 
-* See what options you have `./list.sh`
+* See what options you have `./setup.sh` and choose the one by typing the id number
 
 ```bash
 cd ~/.glslScreenSaver
-./list.sh
-```
-
-* Choose a shader using `./choose.sh [name]`
-
-```bash
-cd ~/.glslScreenSaver
-./choose.sh ikeda
+./setup.sh
 ```
 
 * Test it using `./run.sh`
