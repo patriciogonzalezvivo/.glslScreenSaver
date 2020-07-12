@@ -102,10 +102,7 @@ void main() {
     uv = scale(uv, 5.);
     float df = 1.0;
     df = hex(uv, m);
-    color += aastep(df, .5) * aastep(rectSDF(uv, vec2(1.)), .89);
-
-    // color += time * pct;
-
+    color += aastep(df, .5) * aastep(rectSDF(uv, vec2(1.)), .89) * pct;
 
     gl_FragColor = vec4(color, 1.);
 }
