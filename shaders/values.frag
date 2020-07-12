@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Patricio Gonzalez Vivo
+
 #ifdef GL_ES
 precision mediump float;
 #endif

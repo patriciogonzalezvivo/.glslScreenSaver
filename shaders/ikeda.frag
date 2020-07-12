@@ -1,5 +1,4 @@
-// Author @patriciogv - 2015
-// Title: Ikeda Data Stream
+// Copyright (c) 2015 Patricio Gonzalez Vivo
 
 #ifdef GL_ES
 precision mediump float;

@@ -1,5 +1,4 @@
-// Author: Patricio Gonzalez Vivo
-// Title: Clock
+// Copyright (c) 2015 Patricio Gonzalez Vivo
 
 #ifdef GL_ES
 precision mediump float;
