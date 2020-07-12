@@ -1,1 +1,1 @@
-shaders/defrag.frag
+shaders/clock_analog.frag
