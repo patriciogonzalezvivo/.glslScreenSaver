@@ -9,7 +9,7 @@ IDLE_TIME=$((5*60*1000))
 # Sequence to execute when timeout triggers.
 trigger_cmd() {
     gnome-screenshot -f /tmp/glslScreenSaver.png  
-    glslViewer /home/$USER/.glslScreenSaver/ikeda.frag /tmp/glslScreenSaver.png -f -ss -e cursor,off
+    glslViewer /home/$USER/.glslScreenSaver/shader.frag /tmp/glslScreenSaver.png -f -ss -e cursor,off
 }
 
 sleep_time=$IDLE_TIME
