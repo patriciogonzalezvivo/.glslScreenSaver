@@ -108,13 +108,11 @@ void main() {
 
     float h = floor(u_date.w / 3600.0);
     float m = floor( mod(u_date.w, 3600.0) / 60.0 );
-    float s = ( mod(u_date.w, 60.0) );
     float time = 0.0;
 
-    st -= vec2(0.25, 0.45);
+    st -= vec2(0.3, 0.45);
     time += digits(st, vec2(0.1), h, 0.);
     time += digits(st - vec2(0.2, 0.0), vec2(0.1), m, 0.);
-    time += digits(st - vec2(0.42, 0.0), vec2(0.025), s, 1.);
 
     color += time * pct;
 
