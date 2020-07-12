@@ -1,1 +1,1 @@
-shaders/grayscot.frag
+shaders/clock_analog.frag
