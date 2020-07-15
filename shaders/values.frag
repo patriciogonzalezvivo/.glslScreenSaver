@@ -5,6 +5,7 @@ precision mediump float;
 #endif
 
 uniform sampler2D   u_tex0;
+uniform vec4        u_date;
 uniform vec2        u_resolution;
 uniform vec2        u_mouse;
 
@@ -12,7 +13,6 @@ uniform float       u_time;
 
 float random (in float x) { return fract(sin(x)*1e4); }
 float random (in vec2 _st) { return fract(sin(dot(_st.xy, vec2(12.9898,78.233)))* 43758.5453123);}
-
 
 float digits(in vec2 st, in vec2 size, in float value, in float nDecDigit) {
     st /= size;
@@ -101,7 +101,11 @@ void main() {
     st.x *= u_resolution.x/u_resolution.y;
 
     // Grid
-    vec2 grid = vec2(100.0,50.);
+    // vec2 grid = vec2(100.0,50.);
+    // st *= grid;
+    float h = floor(u_date.w / 3600.0);
+    float m = floor( mod(u_date.w, 3600.0) / 60.0 );
+    vec2 grid = vec2(10.0 * clamp(m + h, 5., 10.), 4.5 * clamp(m, 5., 10.));
     st *= grid;
 
     vec2 ipos = floor(st);  // integer
@@ -123,19 +127,13 @@ void main() {
     color += (1.0-step(head.x,ipos.x))*step(grid.y-head.y,ipos.y+1.);   // X
     color = clamp(color,vec3(0.),vec3(1.));
 
-    // Assign a random value base on the integer coord
-    color.r *= random(floor(st+vel+offset));
-    color.g *= random(floor(st+vel));
-    color.b *= random(floor(st+vel-offset));
+    float rnd = random(floor(st+vel));
 
     vec2 fpos = fract(st+vel);
 
-    color *= digits(fpos, vec2(0.8), random(color.g * 10.) * 9.0, 0.);
-    color = smoothstep(0.,0.5 + sin(ipos.x * 0.012 + u_time) * 0.5,color*color); // smooth
-    color = step(0.5+ cos(ipos.y * 0.015 + u_time) * 0.5,color); // threshold
-
-    //  Margin
-    color *= step(.1,fract(st.x+vel.x))*step(.1,fract(st.y+vel.y));
+    color *= digits(fpos, vec2(0.8), rnd * 9.0, 0.);
+    color = smoothstep(0.,0.5 + sin(ipos.x * 0.012 + u_time) * 0.25,color*color); // smooth
+    color *= step(0.3, random(rnd)); // threshold
 
     float pct = min(u_time * 0.1 + color.r, 1.0);
     color = mix(org, color, pct);

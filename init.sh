@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # export DISPLAY=:0
- export DISPLAY=:1.0
+export DISPLAY=:1.0
 # export DISPLAY=desktop:0
 # Wanted trigger timeout in milliseconds.
 IDLE_TIME=$((5*60*1000))
