@@ -1,0 +1,57 @@
+shaders:
+    clock_analog:
+        fragment: ~/.glslScreenSaver/shaders/clock_analog.frag
+
+    clock_digital:
+        fragment: ~/.glslScreenSaver/shaders/clock_digital.frag
+
+    defrag:
+        fragment: ~/.glslScreenSaver/shaders/defrag.frag
+
+    grayscot:
+        fragment: ~/.glslScreenSaver/shaders/grayscot.frag
+
+    iching:
+        fragment: ~/.glslScreenSaver/shaders/iching.frag
+
+    ikeda:
+        fragment: ~/.glslScreenSaver/shaders/ikeda.frag
+
+    values:
+        fragment: ~/.glslScreenSaver/shaders/values.frag
+
+    stripe_sphere:
+        fragment: ~/.glslScreenSaver/shaders/stripe_sphere.frag
+
+    hex_grid_I:
+        fragment: ~/.glslScreenSaver/shaders/hex_grid_I.frag
+
+    hex_grid_II:
+        fragment: ~/.glslScreenSaver/shaders/hex_grid_II.frag
+
+    mirrors:
+        fragment: ~/.glslScreenSaver/shaders/mirrors.frag
+
+    diamond:
+        fragment: ~/.glslScreenSaver/shaders/diamond.frag
+        vertex: ~/.glslScreenSaver/shaders/diamond.vert
+        geometry: ~/.glslScreenSaver/shaders/neptune.ply
+
+    loop:
+        fragment: ~/.glslScreenSaver/shaders/loop.frag
+
+    pisces:
+        fragment: ~/.glslScreenSaver/shaders/pisces.frag
+
+    matrix:
+        fragment: ~/.glslScreenSaver/shaders/matrix.frag
+
+    10print:
+        fragment: ~/.glslScreenSaver/shaders/10print.frag
+
+    ripples:
+        fragment: ~/.glslScreenSaver/shaders/ripples.frag
+
+wait: 300
+screensaver: [ikeda, values, defrag, hex_grid_I, hex_grid_II, grayscot, clock_analog, diamond, mirrors, loop, pisces, matrix, 10print, ripples]
+# screensaver: ripples
